@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        #documentLink {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+    <script>
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const compname = document.getElementById('compname').value;
+            const cif = document.getElementById('cif').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !compname || !cif || !email) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            const url = 'https://script.google.com/macros/s/AKfycby1cM6uztOOaKRv4yrUPMJO7fK5dmyMlHyLz0TzziYjNGA2G3XIdLxylS-cmBG6jLBd/exec';
+            const params = new URLSearchParams({ name, compname, cif, email });
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: params
+            })
+            .then(response => response.text())
+            .then(result => {
+				alert("Submitted successfully")
+                // Open the link to the PDF in a new tab
+                const pdfLink = result.trim();
+                window.open(pdfLink, '_blank');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while sending the email.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="compname" placeholder="Enter your Company Name">
+        <input type="text" id="cif" placeholder="Enter your CIN">
+        <input type="email" id="email" placeholder="Enter your email">
+        <div class="button-container">
+            <button onclick="sendEmail()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
