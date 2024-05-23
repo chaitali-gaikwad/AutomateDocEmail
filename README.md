@@ -1,10 +1,10 @@
 # AutomateDocEmail
-This project demonstrates how to create a web form that collects user data and generates a customized PDF document based on a template using google app script.
+## This project demonstrates how to create a web form that collects user data and generates a customized PDF document based on a template using google app script.
 
-Prerequisites:
+**Prerequisites:**
 To use this project, you need to have a Google account and basic knowledge of HTML and JavaScript.
 
-Steps:
+**Steps:**
 1. Google Drive Setup:
 Upload your Word document template to your Google Drive. Make sure it's accessible.
 
@@ -23,14 +23,14 @@ Copy the URL provided after deployment.
 
 4. HTML Form Setup:
 Create an HTML file for your form.
-Copy the provided HTML code into your HTML file (index.html).
-Replace <SCRIPT_URL> with the URL of the deployed Google Apps Script.
+Copy the provided HTML code into your HTML file (*index.html*).
+Replace *<SCRIPT_URL>* with the URL of the deployed Google Apps Script.
 
 5. Host the HTML Form:
 Host the HTML file on a web server or serve it locally.
 If serving locally, simply open the HTML file in a web browser.
 
-Usage:
+**Usage:**
 1. Fill in the Form:
    Open the hosted HTML form.
 
