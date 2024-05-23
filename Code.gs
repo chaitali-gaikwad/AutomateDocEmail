@@ -7,7 +7,7 @@ function doPost(e) {
     var now = new Date();
     
     // Load the template document by its ID
-    var templateDocId = "1IGMy85NKPvIDMx79UdT2F3BLmpNzbqm1bPKZPIKAepk"; // Replace with your template document ID
+    var templateDocId = "templateDocId"; // You can find the ID in the url of the page copy the text after d/ till /edit
     var templateFile = DriveApp.getFileById(templateDocId);
     
     // Make a copy of the template
@@ -38,7 +38,7 @@ function doPost(e) {
     
     // Define email recipient, subject, and message
     var recipient1 = email; // Use the provided email as recipient
-    var recipient2 = "chaitali.study2023@gmail.com"; // Add another recipient
+    var recipient2 = "xyz@gmail.com"; // Add another recipient
     var allRecipient = recipient1 + "," + recipient2;
     var subject = "New Submission from Website";
     var message = "Name: " + name + "\nCompany: " + compname + "\nCIN: " + cif + "\nEmail: " + email + "\nSent on: " + now + "\n\nYou can view the PDF document here: " + pdfUrl;
