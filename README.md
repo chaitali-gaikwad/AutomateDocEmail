@@ -2,7 +2,8 @@
 ## This project demonstrates how to create a web form that collects user data and generates a customized PDF document based on a template using google app script.
 
 **Prerequisites:**
-To use this project, you need to have a Google account and basic knowledge of HTML and JavaScript.
+1. Google account
+2. Basic knowledge of HTML and JavaScript.
 
 **Steps:**
 1. Google Drive Setup:
